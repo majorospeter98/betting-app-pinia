@@ -1,7 +1,7 @@
 <template>
   <div class="center">
     <h2>
-      The page doesn't exist. Here is the main page
+      The page doesn't exist.Here is the main page
       <router-link to="/matches">Matches</router-link>
     </h2>
   </div>
