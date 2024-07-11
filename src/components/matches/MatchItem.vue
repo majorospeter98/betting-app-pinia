@@ -6,7 +6,6 @@
     <button class="button" @click="setMatch('away', +id)">Away</button>
   </div>
 </template>
-
 <script>
 export default {
   emits: ["save-data"],
@@ -26,7 +25,6 @@ export default {
           this.results = this.results.filter((result) => result !== this.home);
         }
       }
-
       if (results === "Draw") {
         if (!this.results.includes("Draw")) {
           this.results.push("Draw");
@@ -34,7 +32,6 @@ export default {
           this.results = this.results.filter((result) => result !== "Draw");
         }
       }
-
       if (results === "away") {
         if (!this.results.includes(this.away)) {
           this.results.push(this.away);
@@ -43,11 +40,7 @@ export default {
         }
       }
       this.$emit("save-data", this.match, this.results, id, results);
-
-      //
     },
   },
 };
 </script>
-
-<style scoped></style>

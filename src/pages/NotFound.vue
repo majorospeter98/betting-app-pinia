@@ -6,9 +6,6 @@
     </h2>
   </div>
 </template>
-<script>
-export default {};
-</script>
 <style scoped>
 .center {
   height: 450px;

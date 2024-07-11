@@ -4,7 +4,6 @@ import { defineStore } from "pinia";
 export const useBet = defineStore("bet", {
   state: () => ({
     bets: [],
-    count: 10,
     matches: [
       {
         id: 1,
@@ -37,6 +36,7 @@ export const useBet = defineStore("bet", {
         away: "Cadiz",
       },
     ],
+  
   }),
   getters: {
     match() {
@@ -45,6 +45,7 @@ export const useBet = defineStore("bet", {
     getBets() {
            return this.bets;
     },
+    
   },
   actions: {
     addBet() {},

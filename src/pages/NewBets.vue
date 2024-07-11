@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <section id="newbets">
-      <ul>
+        <section id="newbets">
+      <ul v-if="getBets.length>0">
         <li v-for="bet in getBets" :key="bet">
           <p>{{ bet.info }}</p>
           <span v-for="betres in bet.result" :key="betres">
@@ -9,14 +9,15 @@
           </span>
         </li>
       </ul>
+      <p v-else>You don't have bets currently.</p>
     </section>
   </div>
 </template>
 <script>
 import { useBet } from "../store/bet";
+
 export default {
-  created() {},
-  computed: {
+    computed: {
     getBets() {
       const store = useBet();
       return store.bets;

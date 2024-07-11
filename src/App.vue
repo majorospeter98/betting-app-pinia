@@ -20,6 +20,7 @@ export default {
   box-sizing: border-box;
   font-family: "Atkinson Hyperlegible", sans-serif;
   scrollbar-color: #d2122e white;
+  scroll-behavior: smooth;
 }
 ul {
   list-style: none;
@@ -28,7 +29,7 @@ a {
   text-decoration: none;
 }
 .router-link-active {
-  border: 2px solid white;
+  border:2px solid white;
 }
 .container {
   max-width: 1200px;
@@ -49,7 +50,6 @@ a {
   padding: 12px 14px;
   text-align: center;
 }
-
 .button:hover,
 .button:active {
   background-color: initial;
@@ -57,7 +57,7 @@ a {
   color: #ff4742;
 }
 .button2 {
-  margin-top: 1.3rem;
+  margin: 2rem 0;
   background-image: linear-gradient(
     92.88deg,
     #455eb5 9.16%,
@@ -68,7 +68,6 @@ a {
   border-style: none;
   color: #ffffff;
   cursor: pointer;
-
   font-weight: 500;
   height: 3.2rem;
   padding: 0.4rem 1.3rem;
@@ -76,19 +75,17 @@ a {
   text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
   transition: all 0.5s;
 }
-
 .button2:hover {
   box-shadow: rgba(80, 63, 205, 0.5) 0 1px 10px;
   transition-duration: 0.1s;
 }
-
 @media screen and (max-width: 400px) {
   .button {
     min-height: 20px;
     padding: 8px 10px;
   }
   .button2 {
-    height: 2.5rem;
+    height: 2.2rem;
     padding: 0.3rem 1rem;
   }
 }

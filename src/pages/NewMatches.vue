@@ -42,12 +42,10 @@ export default {
   components: {
     MatchItem,
   },
-
   data() {
     return {
       results: [],
-      dataSaved: false,
-    };
+         };
   },
   computed: {
     getMatches() {
@@ -64,8 +62,7 @@ export default {
         store.bets.push({ info: result1 }, { result: result2 });
       }
       this.results = [];
-      this.dataSaved = true;
-    },
+        },
     deleteBets(matchResult, res) {
       {
         matchResult.results = matchResult.results.filter(
@@ -87,7 +84,7 @@ export default {
       this.results = checkedArray;
     },
   },
-  beforeRouteLeave(_to, _from, next) {
+  beforeRouteLeave(_1, _2, next) {
     if (this.results.length === 0) {
       next();
     } else {
@@ -115,6 +112,7 @@ export default {
 }
 #flex {
   margin-top: 5rem;
+  margin-bottom:2rem;
   display: flex;
   justify-content: space-evenly;
 }
