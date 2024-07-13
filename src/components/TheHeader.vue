@@ -9,7 +9,7 @@ export default {};
 </script>
 <style scoped>
 #header {
-  height: 50px;
+  height: 100px;
   background-color: #d2122e;
   display: flex;
   justify-content: space-evenly;

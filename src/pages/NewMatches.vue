@@ -98,7 +98,7 @@ export default {
 #betslip {
   padding-top: 2.5rem;
   min-height: 320px;
-  min-width: 260px;
+  min-width: 350px;
   border: 1px solid rgba(129, 126, 126, 0.041);
   background-color: rgb(247, 246, 246);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
@@ -129,7 +129,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 730px) {
   #flex {
     flex-direction: column;
   }

@@ -21,6 +21,7 @@ export default {
   font-family: "Atkinson Hyperlegible", sans-serif;
   scrollbar-color: #d2122e white;
   scroll-behavior: smooth;
+  font-size:1.2rem
 }
 ul {
   list-style: none;
@@ -80,6 +81,7 @@ a {
   transition-duration: 0.1s;
 }
 @media screen and (max-width: 400px) {
+ 
   .button {
     min-height: 20px;
     padding: 8px 10px;
