@@ -1,15 +1,16 @@
 <template>
   <div class="container">
-        <section id="newbets">
-      <ul v-if="getBets.length>0">
+    <section id="newbets">
+      <ul v-if="getBets.length > 0">
         <li v-for="bet in getBets" :key="bet">
-          <p>{{ bet.info }}</p>
-          <span v-for="betres in bet.result" :key="betres">
-            <h3>{{ betres }}</h3>
+          <p>{{ bet.match.match }}</p>
+
+          <span v-for="betres in bet.bets" :key="betres">
+            <h3>{{ betres + " " }}</h3>
           </span>
         </li>
       </ul>
-      <p v-else>You don't have bets currently.</p>
+      <p v-else class="bg-blue-500">You don't have bets currently.</p>
     </section>
   </div>
 </template>
@@ -17,7 +18,7 @@
 import { useBet } from "../store/bet";
 
 export default {
-    computed: {
+  computed: {
     getBets() {
       const store = useBet();
       return store.bets;
@@ -36,8 +37,5 @@ export default {
 }
 #newbets span {
   color: red;
-}
-#newbets p {
-  font-weight: 800;
 }
 </style>

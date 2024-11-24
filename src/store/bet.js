@@ -36,16 +36,14 @@ export const useBet = defineStore("bet", {
         away: "Cadiz",
       },
     ],
-  
   }),
   getters: {
     match() {
       return this.matches;
     },
     getBets() {
-           return this.bets;
+      return this.bets;
     },
-    
   },
   actions: {
     addBet() {},
