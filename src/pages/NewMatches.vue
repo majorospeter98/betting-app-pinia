@@ -1,7 +1,7 @@
 <template>
   <div>
-    <section id="flex" class="container">
-      <section id="matches">
+    <section class="container mt-10 mb-6 flex justify-evenly  max-md:flex-col max-md:items-center max-md:gap-8">
+      <section id="matches" class="text-center flex flex-col justify-start items-center">
         <MatchItem
           v-for="matches in getMatches"
           :key="matches.id"
@@ -9,28 +9,32 @@
           @save-data="betslip"
         ></MatchItem>
       </section>
-      <section id="betslip">
-        <ul v-if="results.length > 0">
+      <section id="betslip" class="flex flex-col items-center justify-between  text-center rounded-b-2xl" >
+        <ul class="mt-5" v-if="results.length > 0">
           <li v-for="result in results" :key="result">
             <span v-for="res in result.bets" :key="res">
+              
+              <h1 class="text-2xl">{{ result.match.match }}</h1>
               <h3>{{ res }}</h3>
-              <p>{{ result.match.match }}</p>
+              <div>
               <img
-                class="removebtn"
+                class="removebtn m-auto text-blue"
                 src="../assets/btn30.png"
                 @click="deleteBets(result, res)"
               />
+              </div>
             </span>
           </li>
-          <button
-            class="button2 end"
+       
+        </ul>
+           <button
+            class="button"
             @click="addTheBets"
             v-if="results.length > 0"
           >
             Confirm
           </button>
-        </ul>
-        <h3 v-else>You don't have bets</h3>
+        <h3 class="mt-6 font-bold" v-else>You don't have bets</h3>
       </section>
     </section>
   </div>
@@ -103,41 +107,15 @@ export default {
 </script>
 <style scoped>
 #betslip {
-  padding-top: 2.5rem;
-  min-height: 320px;
-  min-width: 350px;
+
+min-height:420px;
+ width: 350px;
   border: 1px solid rgba(129, 126, 126, 0.041);
   background-color: rgb(247, 246, 246);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  gap: 0.5rem;
-  border-bottom-right-radius: 2rem;
-  border-bottom-left-radius: 2rem;
-}
-#flex {
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: space-evenly;
+
+
 }
 
-#matches {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
 
-  align-items: center;
-}
-@media screen and (max-width: 730px) {
-  #flex {
-    flex-direction: column;
-  }
-  #betslip {
-    margin-top: 5rem;
-    min-width: 200px;
-  }
-}
 </style>

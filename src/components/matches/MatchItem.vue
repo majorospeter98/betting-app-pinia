@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{ match.match }}</h1>
+    <h1 class="font-bold text-xl">{{ match.match }}</h1>
     <button class="button" @click="setMatch('Home')">Home</button>
     <button class="button" @click="setMatch('Draw')">Draw</button>
     <button class="button" @click="setMatch('Away')">Away</button>
