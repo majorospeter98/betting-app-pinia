@@ -19,7 +19,9 @@ export default {
   line-height: 1.6;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  scrollbar-color: #d2122e white;
+  scrollbar-color: #35b8f0 white;
+ scrollbar-width:thin;
+
   scroll-behavior: smooth;
   font-size:1.1rem
 }
@@ -39,11 +41,11 @@ ul {
 .button {
   background: #35b8f0;
   border: 2px solid #35b8f0;
-  border-radius: 6px;
+  border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
    color: white;
   cursor: pointer;
-  display: inline-block;
+  min-width:100px;
  height: 60px;
   margin: 0.5rem;
   padding: 12px 14px;
@@ -62,9 +64,6 @@ ul {
     min-height: 20px;
     padding: 8px 10px;
   }
-  .button2 {
-    height: 2.2rem;
-    padding: 0.3rem 1rem;
-  }
+
 }
 </style>

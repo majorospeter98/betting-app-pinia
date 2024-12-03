@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="container mt-10 mb-6 flex justify-evenly  max-md:flex-col max-md:items-center max-md:gap-8">
-      <section id="matches" class="text-center flex flex-col justify-start items-center">
+      <section id="matches" class="text-center flex flex-col  justify-start items-center">
         <MatchItem
           v-for="matches in getMatches"
           :key="matches.id"
@@ -9,7 +9,7 @@
           @save-data="betslip"
         ></MatchItem>
       </section>
-      <section id="betslip" class="flex flex-col items-center justify-between  text-center rounded-b-2xl" >
+      <section id="betslip" class="flex flex-col items-center min-h-[420px] w-[350px] bg-betslip border-solid border-1 border-border justify-between  text-center rounded-2xl shadow-3xl" >
         <ul class="mt-5" v-if="results.length > 0">
           <li v-for="result in results" :key="result">
             <span v-for="res in result.bets" :key="res">
@@ -106,16 +106,8 @@ export default {
 };
 </script>
 <style scoped>
-#betslip {
 
-min-height:420px;
- width: 350px;
-  border: 1px solid rgba(129, 126, 126, 0.041);
-  background-color: rgb(247, 246, 246);
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 10px;
-
-
+button{
+  width:140px;
 }
-
-
 </style>

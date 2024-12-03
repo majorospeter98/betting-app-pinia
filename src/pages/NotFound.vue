@@ -1,16 +1,12 @@
 <template>
-  <div class="center">
+  <div class="h-[450px] flex flex-col justify-center items-center">
     <h2>
-      The page doesn't exist.Here is the main page
-      <router-link to="/matches">Matches</router-link>
+      The page doesn't exist
+    
     </h2>
+      <router-link class="text-red-600" to="/matches">Main page</router-link>
   </div>
 </template>
 <style scoped>
-.center {
-  height: 450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 </style>

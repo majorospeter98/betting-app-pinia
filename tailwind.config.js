@@ -11,7 +11,12 @@ module.exports = {
       'max-md': { max: '850px' }, 
       },
       colors:{
-        'primary': '#35b8f0'
+        'primary': '#35b8f0',
+        'betslip': 'rgb(247, 246, 246)',
+        'border' : 'rgba(129, 126, 126, 0.041)'
+      },
+      boxShadow:{
+        '3xl' : 'rgba(0, 0, 0, 0.25) 0px 5px 10px'
       }
     },
 
