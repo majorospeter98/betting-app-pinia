@@ -1,7 +1,12 @@
 <template>
   <div>
-    <section class="container mt-10 mb-6 flex justify-evenly  max-md:flex-col max-md:items-center max-md:gap-8">
-      <section id="matches" class="text-center flex flex-col  justify-start items-center">
+    <section
+      class="container mt-10 mb-6 flex justify-evenly max-md:flex-col max-md:items-center max-md:gap-8"
+    >
+      <section
+        id="matches"
+        class="text-center flex flex-col justify-start items-center"
+      >
         <MatchItem
           v-for="matches in getMatches"
           :key="matches.id"
@@ -9,31 +14,32 @@
           @save-data="betslip"
         ></MatchItem>
       </section>
-      <section id="betslip" class="flex flex-col items-center min-h-[420px] w-[350px] bg-betslip border-solid border-1 border-border justify-between  text-center rounded-2xl shadow-3xl" >
+      <section
+        id="betslip"
+        class="flex flex-col items-center min-h-[420px] w-[350px] bg-betslip border-solid border-1 border-border justify-between text-center rounded-2xl shadow-3xl"
+      >
         <ul class="mt-5" v-if="results.length > 0">
           <li v-for="result in results" :key="result">
             <span v-for="res in result.bets" :key="res">
-              
               <h1 class="text-2xl">{{ result.match.match }}</h1>
               <h3>{{ res }}</h3>
               <div>
-              <img
-                class="removebtn m-auto text-blue"
-                src="../assets/btn30.png"
-                @click="deleteBets(result, res)"
-              />
+                <img
+                  class="removebtn m-auto text-blue"
+                  src="../assets/btn30.png"
+                  @click="deleteBets(result, res)"
+                />
               </div>
             </span>
           </li>
-       
         </ul>
-           <button
-            class="button"
-            @click="addTheBets"
-            v-if="results.length > 0"
-          >
-            Confirm
-          </button>
+        <button
+          class="button w-[140px]"
+          @click="addTheBets"
+          v-if="results.length > 0"
+        >
+          Confirm
+        </button>
         <h3 class="mt-6 font-bold" v-else>You don't have bets</h3>
       </section>
     </section>
@@ -68,16 +74,14 @@ export default {
       this.results = [];
     },
     deleteBets(matchResult, res) {
-      console.log(matchResult, res);
-
       matchResult.bets = matchResult.bets.filter((delbet) => delbet !== res);
-           this.results = this.results.filter((result) => result.bets.length !== 0);
+      this.results = this.results.filter((result) => result.bets.length !== 0);
     },
     betslip(match, result) {
       const currentMatch = this.results.filter(
         (result) => result.match === match
       );
-     
+
       if (currentMatch.length === 0) {
         this.results.push({ match: match, bets: [result] });
       } else {
@@ -105,9 +109,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-
-button{
-  width:140px;
-}
-</style>

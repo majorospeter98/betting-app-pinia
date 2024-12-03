@@ -45,7 +45,7 @@ ul {
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
    color: white;
   cursor: pointer;
-  min-width:100px;
+  min-width:95px;
  height: 60px;
   margin: 0.5rem;
   padding: 12px 14px;
