@@ -42,7 +42,7 @@ export default {
         }
       );
       this.apiMatches = response.data.response;
-      if (this.apiMatches.length < 1) {
+      if (this.apiMatches.length < 2) {
     
         this.apiMatches = this.getBets;     // if Not enough api data, static data fallback.
       }

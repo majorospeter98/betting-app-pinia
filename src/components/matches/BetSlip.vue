@@ -33,9 +33,7 @@
         <h3 class="mt-6 font-bold" v-else>You don't have bets</h3>
       </section>
 </template>
-
 <script>
-
 export default {
     props: ["results"],
     emits:["delete", "add"],
@@ -49,14 +47,6 @@ alert("Confirmed")
       }
     }),
     
-    beforeRouteLeave(_1, _2, next) {
-      console.log(results());
-    if (this.results.length === 0) {
-      next();
-    } else {
-      let answer = confirm("You have unsaved data, you wanna still leave?");
-      next(answer);
-    }
-  },
+    
 }
 </script>>
