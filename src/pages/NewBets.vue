@@ -1,21 +1,20 @@
 <template>
-  <div class="container">
-    <section class="flex items-center justify-center text-center">
-      <ul v-if="getBets.length > 0">
-        <li v-for="bet in getBets" :key="bet">
-          <p class="font-bold text-2xl">{{ bet.match.match }}</p>
-          <span v-for="betres in bet.bets" :key="betres">
-            <h3>{{ betres + " " }}</h3>
-          </span>
-        </li>
-      </ul>
-      <p v-else>You don't have bets currently.</p>
-    </section>
-  </div>
+  <section class="container flex items-center justify-center text-center">
+    <ul v-if="getBets.length > 0">
+     <div v-for="(bet, index) in getBets" :key="index">
+        <h1 class="font-bold text-2xl">
+          {{ bet.match.teams.home.name + " - " + bet.match.teams.away.name }}
+        </h1>
+        <span v-for="betresult in bet.bets" :key="betresult">
+          <h3>{{ betresult }}</h3>
+        </span>
+      </div>
+    </ul>
+    <p v-else>You don't have bets currently.</p>
+  </section>
 </template>
 <script>
 import { useBet } from "../store/bet";
-
 export default {
   computed: {
     getBets() {

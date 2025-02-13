@@ -1,8 +1,8 @@
 <template>
-  <div class="bg-linear-bg">
+  <main class="bg-linear-bg">
     <the-header></the-header>
     <router-view></router-view>
-  </div>
+  </main>
 </template>
 <script>
 import TheHeader from "./components/TheHeader.vue";

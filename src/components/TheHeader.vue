@@ -1,5 +1,6 @@
 <template>
-  <div class="h-[100px] flex justify-evenly items-center">
+  <header class="h-[100px] flex justify-evenly items-center">
+    
     <router-link
       class="uppercase no-underline hover:border-b-2 border-solid border-primary"
       to="/matches"
@@ -10,8 +11,7 @@
       to="/myBets"
       >My Bets</router-link
     >
-  </div>
+    
+  </header>
 </template>
-<script>
-export default {};
-</script>
+

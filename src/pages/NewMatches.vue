@@ -1,87 +1,81 @@
 <template>
-  <div>
+  <section
+    class="container mt-10 mb-6 flex justify-evenly max-md:flex-col max-md:items-center max-md:gap-8"
+  >
     <section
-      class="container mt-10 mb-6 flex justify-evenly max-md:flex-col max-md:items-center max-md:gap-8"
+      id="matches"
+      class="text-center flex flex-col justify-start items-center"
     >
-      <section
-        id="matches"
-        class="text-center flex flex-col justify-start items-center"
-      >
-        <MatchItem
-          v-for="matches in getMatches"
-          :key="matches.id"
-          :match="matches"
-          @save-data="betslip"
-        ></MatchItem>
-      </section>
-      <section
-        id="betslip"
-        class="flex flex-col items-center min-h-[420px] w-[350px] bg-betslip border-solid border-1 border-border justify-between text-center rounded-2xl shadow-3xl"
-      >
-        <ul class="mt-5" v-if="results.length > 0">
-          <li v-for="result in results" :key="result">
-            <span v-for="res in result.bets" :key="res">
-              <h1 class="text-2xl">{{ result.match.match }}</h1>
-              <h3>{{ res }}</h3>
-              <div>
-                <img
-                  class="removebtn m-auto text-blue"
-                  src="../assets/btn30.png"
-                  @click="deleteBets(result, res)"
-                />
-              </div>
-            </span>
-          </li>
-        </ul>
-        <button
-          class="button w-[140px]"
-          @click="addTheBets"
-          v-if="results.length > 0"
-        >
-          Confirm
-        </button>
-        <h3 class="mt-6 font-bold" v-else>You don't have bets</h3>
-      </section>
+      <MatchItem
+        v-for="matches in apiMatches"
+        :key="matches.fixture.id"
+        :match="matches"
+        @save-data="betslip"
+      ></MatchItem>
     </section>
-  </div>
+    <BetSlip
+      :results="results"
+      @delete="deleteBetsFromSlip"
+      @add="addTheBetsToTheStore"
+    ></BetSlip>
+  </section>
 </template>
 <script>
 import MatchItem from "@/components/matches/MatchItem.vue";
 import { useBet } from "../store/bet";
+import axios from "axios";
+import BetSlip from "@/components/matches/BetSlip.vue";
 export default {
   name: "BetApp",
   components: {
-    MatchItem,
+    MatchItem,  BetSlip,
+     },
+  async created() {
+    try {
+      const response = await axios.get(
+        "https://v3.football.api-sports.io/fixtures?live=all",
+        {
+          headers: {
+            "x-rapidapi-host": "v3.football.api-sports.io",
+            "x-rapidapi-key": "d7934c5d1bf99178e703f84667df7432",
+          },
+        }
+      );
+      this.apiMatches = response.data.response;
+      if (this.apiMatches.length < 1) {
+    
+        this.apiMatches = this.getBets;     // if Not enough api data, static data fallback.
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   },
   data() {
     return {
       results: [],
+      apiMatches: [],
     };
   },
   computed: {
-    getMatches() {
+    getBets() {
       const store = useBet();
-
-      return store.match;
+      return store.matches; // Here the static fallback loaded
     },
   },
   methods: {
-    addTheBets() {
+    addTheBetsToTheStore() {
       const store = useBet();
-
       store.bets.push(...this.results);
-
       this.results = [];
     },
-    deleteBets(matchResult, res) {
+    deleteBetsFromSlip(matchResult, res) {
       matchResult.bets = matchResult.bets.filter((delbet) => delbet !== res);
       this.results = this.results.filter((result) => result.bets.length !== 0);
     },
     betslip(match, result) {
       const currentMatch = this.results.filter(
-        (result) => result.match === match
+        (result) => result.match?.fixture?.id === match.fixture.id
       );
-
       if (currentMatch.length === 0) {
         this.results.push({ match: match, bets: [result] });
       } else {
