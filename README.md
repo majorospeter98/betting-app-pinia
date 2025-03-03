@@ -1,33 +1,37 @@
-Betting app with Pinia and Tailwind
+<h1>Betting App Project with Vue, Pinia, and Tailwind</h1>
 
-About: You can bet for football matches, also you can remove bets from the Betslip.
+<h2>Place your bets, then view them in the history</h2>
+<p>In this project, you can do the following:</p>
+<ul>
+  <li>Check the currently available matches.</li>
+  <li>Add selected tips to the bet slip.</li>
+  <li>Delete tips from the bet slip.</li>
+  <li>View your placed bets.</li>
+</ul>
 
-Used knowledge: Vue, Javascript, Tailwind CSS, HTML5, Pinia
+<h2>Live Demo:</h2>
+🖥️ <a href="https://bettingappvue.netlify.app/" target="_blank">https://bettingappvue.netlify.app/</a>
 
-🖥️ Live Demo: https://bettingappvue.netlify.app/
+<h2>Setup</h2>
+<p>Clone the project using the following command:</p>
+<ol>
+  <li><code>git clone https://github.com/majorospeter98/betting-app-pinia</code></li>
+  <li>Navigate to the project directory: <code>cd betting-app-pinia</code></li>
+</ol>
 
-Run locally Clone the project using the following command:
+<h2>Client Setup</h2>
+<p>Install client dependencies and start the client:</p>
+<ol>
+  <li><code>cd client</code></li>
+  <li><code>npm install</code></li>
+  <li><code>npm run dev</code></li>
+</ol>
 
-git clone https://github.com/majorospeter98/betting-app-pinia
-
-Navigate to the project directory using the following command:
-
-cd betting-app-pinia
-
-Install client dependencies and start the client using the following commands:
-
-cd client
-
-npm install
-
-npm run dev
-
-Install server dependencies, build and start the server using the following commands:
-
-cd server
-
-npm install
-
-npm run build
-
-npm start
+<h2>Server Setup</h2>
+<p>Install server dependencies, build, and start the server:</p>
+<ol>
+  <li><code>cd server</code></li>
+  <li><code>npm install</code></li>
+  <li><code>npm run build</code></li>
+  <li><code>npm start</code></li>
+</ol>
