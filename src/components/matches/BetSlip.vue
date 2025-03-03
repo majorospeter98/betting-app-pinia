@@ -9,7 +9,7 @@
             <h1 class="text-2xl font-bold">  {{teamNames.name   }} </h1>
               </span>
             <span v-for="matchresult in result.bets" :key="matchresult">
-                <h3>{{ matchresult }}</h3>
+                <h3>{{$t(matchresult) }}</h3>
 
               <div>
                 <img
@@ -23,14 +23,14 @@
           </li>
            
         </ul>
-        <button
-          class="button w-[140px]"
+        <button 
+          class="button min-w-36"
           @click="addTheBets"
           v-if="results.length > 0"
         >
-          Confirm
+          {{$t("Confirm")}}
         </button>
-        <h3 class="mt-6 font-bold" v-else>You don't have bets</h3>
+        <h3 class="mt-6 font-bold" v-else>{{$t("YouDontHave")}}</h3>
       </section>
 </template>
 <script>
@@ -43,7 +43,7 @@ export default {
       },
       addTheBets(){
 this.$emit("add" );
-alert("Confirmed")
+alert(this.$t("Confirm"));
       }
     }),
     

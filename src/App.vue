@@ -19,7 +19,7 @@ export default {
   line-height: 1.6;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  scrollbar-color: #35b8f0 white;
+  scrollbar-color: #f03737 white;
  scrollbar-width:thin;
 
   scroll-behavior: smooth;
@@ -50,12 +50,14 @@ ul {
   margin: 0.5rem;
   padding: 12px 14px;
   text-align: center;
+   transition: all 0.3s ease-in;
 }
 .button:hover,
 .button:active {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.20) 5px 5px 5px;
   color: #35b8f0;
+ 
 }
 
 @media screen and (max-width: 400px) {

@@ -6,11 +6,11 @@
           {{ bet.match.teams.home.name + " - " + bet.match.teams.away.name }}
         </h1>
         <span v-for="betresult in bet.bets" :key="betresult">
-          <h3>{{ betresult }}</h3>
+          <h3>{{$t(betresult)}}</h3>
         </span>
       </div>
     </ul>
-    <p v-else>You don't have bets currently.</p>
+    <p v-else> {{$t("YouDontHave")}}</p>
   </section>
 </template>
 <script>

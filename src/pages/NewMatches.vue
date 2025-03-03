@@ -97,7 +97,7 @@ export default {
     if (this.results.length === 0) {
       next();
     } else {
-      let answer = confirm("You have unsaved data, you wanna still leave?");
+      let answer = confirm(this.$t("Unsaved"));
       next(answer);
     }
   },

@@ -3,9 +3,9 @@
   <h1 class="font-bold text-xl">
   {{ match.teams.home.name + ' ' + match.teams.away.name }}
 </h1>
-    <button class="button" @click="setMatch('Home')">Home</button>
-    <button class="button" @click="setMatch('Draw')">Draw</button>
-    <button class="button" @click="setMatch('Away')">Away</button>
+    <button class="button" @click="setMatch('Home')">{{$t("Home")}}</button>
+    <button class="button" @click="setMatch('Draw')">{{$t("Draw")}}</button>
+    <button class="button" @click="setMatch('Away')">{{$t("Away")}}</button>
   </div>
 </template>
 <script>
