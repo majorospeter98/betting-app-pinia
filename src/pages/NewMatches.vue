@@ -47,13 +47,14 @@ export default {
         }
       );
       this.apiMatches = response.data.response;
-      if (this.apiMatches.length < 2) {
+      if (this.apiMatches.length < 3) {
     
         this.apiMatches = this.getBets;     // if Not enough api data, static data fallback.
       }
     } catch (error) {
       console.error("Error fetching data:", error);
-    }
+       this.apiMatches = this.getBets;  // if something is bromen with api, static data fallback.
+    } 
   },
   data() {
     return {
