@@ -6,7 +6,8 @@
     "Away": "Away",
     "YouDontHave": "You don't have bets",
     "Confirm": "Confirm",
-    "Unsaved": "You have unsaved data, you wanna still leave?"
-
-
-}
+    "Unsaved": "You have unsaved data, you wanna still leave?",
+    "Saved": "Successful Bet",
+    "MainPage": "Main Page",
+    "error":"The page doesn't exist"
+    }

@@ -5,8 +5,10 @@
     "Draw": "Döntetlen",
     "Away": "Vendég",
     "YouDontHave": "Nincs tipped jelenleg",
-    "Confirm": "Megerősítés",
-    "Unsaved": "Vannak mentetlen adatok, biztos továbblépsz?"
-
+    "Confirm": "Fogadás",
+    "Unsaved": "Vannak mentetlen adatok, biztos továbblépsz?",
+    "Saved": "Sikeres fogadás",
+    "MainPage": "Főoldal",
+    "error":"Nem létező oldal"
 
 }

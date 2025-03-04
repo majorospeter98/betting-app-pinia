@@ -7,6 +7,7 @@
   <li>Add selected tips to the bet slip.</li>
   <li>Delete tips from the bet slip.</li>
   <li>View your placed bets.</li>
+    <li>Change the language.</li>
 </ul>
 
 <h2>Live Demo:</h2>

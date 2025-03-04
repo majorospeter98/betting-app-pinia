@@ -1,4 +1,5 @@
 <template>
+<div>
   <section
     class="container mt-10 mb-6 flex justify-evenly max-md:flex-col max-md:items-center max-md:gap-8"
   >
@@ -17,13 +18,17 @@
       :results="results"
       @delete="deleteBetsFromSlip"
       @add="addTheBetsToTheStore"
+       @toast="showToast"
     ></BetSlip>
   </section>
+ 
+</div>
 </template>
 <script>
 import MatchItem from "@/components/matches/MatchItem.vue";
 import { useBet } from "../store/bet";
 import axios from "axios";
+import { useToast } from "vue-toastification";
 import BetSlip from "@/components/matches/BetSlip.vue";
 export default {
   name: "BetApp",
@@ -54,6 +59,7 @@ export default {
     return {
       results: [],
       apiMatches: [],
+      toast: useToast(),
     };
   },
   computed: {
@@ -92,14 +98,19 @@ export default {
         }
       }
     },
+     showToast(){
+      this.toast.success(this.$t('Saved'))
+    
+  }
   },
-  beforeRouteLeave(_1, _2, next) {
+   beforeRouteLeave(_1, _2, next) {
     if (this.results.length === 0) {
       next();
     } else {
-      let answer = confirm(this.$t("Unsaved"));
+           let answer = confirm(this.$t("Unsaved"));
       next(answer);
     }
   },
-};
+}
+
 </script>
